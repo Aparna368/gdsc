@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Posts</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      background-color: #343a40; /* Dark Grey */
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .post {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .post img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .post-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .post-content {
+      line-height: 1.6;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      resize: none;
+      margin-bottom: 10px;
+    }
+
+    button {
+      display: block;
+      margin-left: auto;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="home.html">Calm Jem</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mypost.html">Mypost</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="specialist.html">Talk to experts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="content.html">Content</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="community.html">Community</a>
+            </li>
+                <!-- Logout Button -->
+                <button id="logoutBtn" class="btn btn-danger btn-block">Logout</button>
+              </div>
+              <script>
+                // Add event listener to the logout button
+                document.getElementById("logoutBtn").addEventListener("click", function() {
+                  // Perform logout actions here, such as clearing session storage or redirecting to the login page
+                  // Example: Clear session storage and redirect to the login page
+                  sessionStorage.clear(); // Clear session 
+                  window.location.href = "home.html"; // Redirect to the login page
+          });
+        </script>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h2 class="text-center mt-4">My Posts</h2>
+
+  <!-- Post Form -->
+  <div class="post">
+    <h3 class="post-title">Write Your Post</h3>
+    <textarea id="post-content" class="form-control" placeholder="Write your blog or feelings..."></textarea>
+    <input type="file" id="post-image" class="form-control-file mb-2" accept="image/*" multiple>
+    <button class="btn btn-primary" onclick="submitPost()">Post</button>
+  </div>
+
+  <!-- Existing Posts (Example) -->
+  <div class="post">
+    <h3 class="post-title">Example Post</h3>
+    <p class="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in ultricies magna. Proin consequat urna nec libero commodo, vel fringilla velit dictum.</p>
+    <img src="https://via.placeholder.com/500" alt="Example Image">
+  </div>
+</div>
+
+<script>
+  function submitPost() {
+    var postContent = document.getElementById("post-content").value;
+    var postImage = document.getElementById("post-image").files;
+
+    // You can handle the submission of the post data here
+    console.log("Post Content:", postContent);
+    console.log("Post Image(s):", postImage);
+  }
+</script>
+
+</body>
+</html>

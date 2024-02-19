@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .chat-container {
+      height: 100vh; /* Full height */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-messages {
+      flex: 1; /* Grow to fill available space */
+      overflow-y: auto; /* Enable vertical scrolling */
+      padding: 20px;
+    }
+
+    .message {
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .message.sender {
+      background-color: #007bff;
+      color: #fff;
+      align-self: flex-end;
+    }
+
+    .message.receiver {
+      background-color: #f0f0f0;
+    }
+    .navbar {
+      background-color: #343a40; /* Dark Grey */
+    }
+
+    .message .meta {
+      font-size: 0.8rem;
+      margin-bottom: 5px;
+    }
+
+    textarea {
+      width: calc(100% - 40px); /* Adjust for padding */
+      height: 80px;
+      resize: none;
+      margin: 20px 20px 0 20px;
+      border-radius: 10px;
+    }
+
+    button {
+      margin: 0 20px 20px 20px;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="home.html">Calm Jem</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mypost.html">Mypost</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="specialist.html">Talk to experts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="content.html">Content</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="community.html">Community</a>
+            </li>            
+                <!-- Logout Button -->
+                <button id="logoutBtn" class="btn btn-danger btn-block">Logout</button>
+              </div>
+              <script>
+                // Add event listener to the logout button
+                document.getElementById("logoutBtn").addEventListener("click", function() {
+                  // Perform logout actions here, such as clearing session storage or redirecting to the login page
+                  // Example: Clear session storage and redirect to the login page
+                  sessionStorage.clear(); // Clear session 
+                  window.location.href = "home.html"; // Redirect to the login page
+          });
+        </script>
+      </li>
+    </ul>
+  </div>
+  </nav>
+
+<div class="container chat-container">
+  <h2 class="text-center mt-4">Community Chat</h2>
+
+  <div class="chat-messages">
+    <!-- Messages will be displayed here -->
+    <div class="message sender">
+      <div class="meta">You - <span>12:30 PM</span></div>
+      <div class="content">Hello, how are you?</div>
+    </div>
+
+    <div class="message receiver">
+      <div class="meta">John Doe - <span>12:35 PM</span></div>
+      <div class="content">I'm good, thanks for asking!</div>
+    </div>
+
+    <!-- Add more messages as needed -->
+  </div>
+
+  <textarea id="message-input" class="form-control" placeholder="Type your message..."></textarea>
+  <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+  function sendMessage() {
+    var messageInput = document.getElementById("message-input").value;
+    var messageContainer = document.querySelector(".chat-messages");
+
+    // Create a new message element
+    var newMessage = document.createElement("div");
+    newMessage.classList.add("message", "sender");
+    newMessage.innerHTML = `
+      <div class="meta">You - <span>${getCurrentTime()}</span></div>
+      <div class="content">${messageInput}</div>
+    `;
+
+    // Append the new message to the message container
+    messageContainer.appendChild(newMessage);
+
+    // Scroll to the bottom of the chat window
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+
+    // Clear the message input field
+    document.getElementById("message-input").value = "";
+  }
+
+  function getCurrentTime() {
+    var now = new Date();
+    var hours = now.getHours().toString().padStart(2, "0");
+    var minutes = now.getMinutes().toString().padStart(2, "0");
+    return hours + ":" + minutes;
+  }
+</script>
+
+</body>
+</html>

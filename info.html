@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Calm Jem</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-color: #343a40; /* Dark Grey */
+    }
+
+    .container {
+      max-width: 600px;
+      margin-top: 50px;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group label {
+      color: #007bff;
+    }
+
+    .form-control {
+      border-color: #007bff;
+    }
+
+    .form-control:focus {
+      border-color: #0056b3;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="home.html">Calm Jem
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Sign/signup</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <form id="problemForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <select class="form-control" id="age">
+        <option value="12-18">12-18</option>
+        <option value="19-25">19-25</option>
+        <option value="26-35">26-35</option>
+        <option value="36-50">36-50</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="problem">Problem</label>
+      <select class="form-control" id="problem">
+        <option value="friendship">Friendship Issues</option>
+        <option value="friendship">Anxiety</option>
+        <option value="friendship">Sleep disorders</option>
+        <option value="friendship">Lonelines</option>
+        <option value="breakup">Relationship Issues</option>
+        <option value="friendship">Family Issues</option>
+        <option value="friendship">Deficit-hyperactivity and eating</option>
+        <option value="friendship">Depression</option>
+        <option value="friendship">Other</option>
+        
+      </select>
+    </div>
+    <button type="button" id="submitBtn" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('submitBtn').addEventListener('click', function() {
+      var problem = document.getElementById('problem').value;
+      if (problem === 'friendship') {
+        window.location.href = 'page.html'; // Redirect to friendship.html
+      } else if (problem === 'breakup') {
+        window.location.href = 'page.html'; // Redirect to breakup.html
+      } else {
+        alert('Redirect to a generic page for other problems');
+        // Implement redirection to a generic page for other problems
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

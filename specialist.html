@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      background-color: #343a40; /* Dark Grey */
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    button {
+      display: block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="home.html">Calm Jem</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mypost.html">Mypost</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="specialist.html">Talk to experts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="content.html">Content</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="community.html">Community</a>
+            </li>
+                <!-- Logout Button -->
+                <button id="logoutBtn" class="btn btn-danger btn-block">Logout</button>
+              </div>
+              <script>
+                // Add event listener to the logout button
+                document.getElementById("logoutBtn").addEventListener("click", function() {
+                  // Perform logout actions here, such as clearing session storage or redirecting to the login page
+                  // Example: Clear session storage and redirect to the login page
+                  sessionStorage.clear(); // Clear session 
+                  window.location.href = "home.html"; // Redirect to the login page
+          });
+        </script>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+  <h2 class="text-center mt-4">Book Appointment</h2>
+
+  <!-- Expert Selection -->
+  <div class="form-group">
+    <label for="expertSelect">Select Expert</label>
+    <select id="expertSelect" class="form-control">
+      <option value="1">Expert 1</option>
+      <option value="2">Expert 2</option>
+      <option value="3">Expert 3</option>
+      <!-- Add more experts as needed -->
+    </select>
+  </div>
+
+  <!-- Time Slot Selection -->
+  <div class="form-group">
+    <label for="timeSlotSelect">Select Time Slot</label>
+    <select id="timeSlotSelect" class="form-control">
+      <option value="9:00 AM">9:00 AM</option>
+      <option value="10:00 AM">10:00 AM</option>
+      <option value="11:00 AM">11:00 AM</option>
+      <!-- Add more time slots as needed -->
+    </select>
+  </div>
+
+  <!-- Payment -->
+  <div class="form-group">
+    <label for="paymentAmount">Payment Amount</label>
+    <input type="text" id="paymentAmount" class="form-control" placeholder="Enter payment amount">
+  </div>
+
+  <!-- Payment Button -->
+  <button class="btn btn-primary btn-block">Pay Now</button>
+</div>
+
+<script>
+  // You can add JavaScript code for handling payment processing here
+</script>
+
+</body>
+</html>
